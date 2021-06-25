@@ -28,4 +28,4 @@ jobs:
         run: |
           wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.4.0.2170-linux.zip \
           && unzip sonar-scanner-cli-4.4.0.2170-linux.zip \
-          && ./sonar-scanner-4.4.0.2170-linux/bin/sonar-scanner
+          && ./sonar-scanner-4.4.0.2170-linux/bin/sonar-scanner -Dsonar.host.url=https://sonarcloud.io
