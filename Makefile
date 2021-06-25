@@ -27,7 +27,7 @@ LINKLIB = -lpcap
 INSTDIR = /usr/local
 
 iwas4gdou: main.o pidfile.o iwas4g.o md5.o rc4.o hmac_md5.o
-	$(CC) $(INCLUDE) $(LIB) $(LINKLIB) -o iwas4gdou main.o pidfile.o iwas4g.o md5.o rc4.o hmac_md5.o
+	$(CC) -o iwas4gdou main.o pidfile.o iwas4g.o md5.o rc4.o hmac_md5.o $(LIB) $(LINKLIB)
 
 main.o: main.c pidfile.h iwas4g.h
 	$(CC) $(INCLUDE) $(CFLAG) -c main.c
