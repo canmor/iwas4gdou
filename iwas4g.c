@@ -203,11 +203,11 @@ iwas4g_begin_session (iwas4g_env *env)
                              * sizeof(char));
   sprintf(if_name, IF_NAME, env->if_name);
   sid = pcap_open_live(if_name, PACKET_LEN, 0, env->to_ms, errbuf);
+  free(if_name);
   if (!sid) {
     put_error(errbuf);
     return (-1);
   }
-  free(if_name);
 
   /* Set capture filter */
   sprintf(filter, FILTER, hw_addr[0], hw_addr[1], hw_addr[2], 
