@@ -19,7 +19,8 @@ jobs:
           && wget https://sonarcloud.io/static/cpp/build-wrapper-linux-x86.zip \
           && unzip build-wrapper-linux-x86.zip \
           && ./build-wrapper-linux-x86/build-wrapper-linux-x86-64 --out-dir bw_output make \
-          && ls bw_output && cat bw_output/build-wrapper.json
+          && ls bw_output && cat bw_output/build-wrapper-dump.json \
+          && echo "========" && cat bw_output/build-wrapper.log
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v1.6
         env:
