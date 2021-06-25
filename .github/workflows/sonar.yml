@@ -18,9 +18,7 @@ jobs:
           sudo apt-get update && sudo apt-get install -y libpcap0.8 libpcap-dev \
           && wget https://sonarcloud.io/static/cpp/build-wrapper-linux-x86.zip \
           && unzip build-wrapper-linux-x86.zip \
-          && ./build-wrapper-linux-x86/build-wrapper-linux-x86-64 --out-dir bw_output make \
-          && ls bw_output && cat bw_output/build-wrapper-dump.json \
-          && echo "========" && cat bw_output/build-wrapper.log
+          && ./build-wrapper-linux-x86/build-wrapper-linux-x86-64 --out-dir bw_output make
       - name: SonarCloud Scan
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
